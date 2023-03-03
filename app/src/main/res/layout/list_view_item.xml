@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="tvshow"
+            type="com.example.tvshow.network.TVShow" />
+        <variable
+            name="clickListener"
+             type="com.example.tvshow.TVShowListener"/>
+    </data>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:onClick="@{() -> clickListener.onClick(tvshow)}"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="4dp" layout_height="" layout_width="">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/tvshow_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:imageUrl="@{tvshow.image.medium}"/>
+    <TextView
+        android:id="@+id/tvshow_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:padding="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="18sp"
+        android:text="@{tvshow.name}"
+        app:layout_constraintStart_toEndOf="@id/tvshow_image"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Show1" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/tvshow_image"
+        app:layout_constraintTop_toBottomOf="@id/tvshow_name"
+        android:text="@{tvshow.rating.average}"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</layout>

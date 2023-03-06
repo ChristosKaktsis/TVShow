@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/TVShowListFragment"
-        android:name="com.example.tvshow.TVShowListFragment"
+        android:name="com.example.tvshow.ui.TVShowListFragment"
         android:label="fragment_t_v_show_list"
         tools:layout="@layout/fragment_t_v_show_list" >
         <action
@@ -16,7 +16,11 @@
     </fragment>
     <fragment
         android:id="@+id/TVShowDetailFragment"
-        android:name="com.example.tvshow.TVShowDetailFragment"
+        android:name="com.example.tvshow.ui.TVShowDetailFragment"
         android:label="fragment_t_v_show_detail"
-        tools:layout="@layout/fragment_t_v_show_detail" />
+        tools:layout="@layout/fragment_t_v_show_detail" >
+        <argument
+            android:name="showId"
+            app:argType="string" />
+    </fragment>
 </navigation>

@@ -1,4 +1,4 @@
-package com.example.tvshow
+package com.example.tvshow.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,7 +9,7 @@ import com.example.tvshow.databinding.ListViewItemBinding
 import com.example.tvshow.network.TVShow
 
 class TVShowListAdapter(val clickListener: TVShowListener)  :
-    ListAdapter<TVShow,TVShowListAdapter.TVShowListViewHolder > (DiffCallback){
+    ListAdapter<TVShow, TVShowListAdapter.TVShowListViewHolder> (DiffCallback){
     class TVShowListViewHolder(
         var binding: ListViewItemBinding
     ) : RecyclerView.ViewHolder(binding.root){

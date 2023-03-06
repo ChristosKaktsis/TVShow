@@ -10,9 +10,10 @@ import com.example.tvshow.network.TVShow
 data class DatabaseShow constructor(
     @PrimaryKey
     val id:String,
-    val image: String,
+    val thumbnail:String,
+    val originalImage:String,
     val name:String,
-    val rating: String?,
+    val rating: String,
     val summary:String)
 
 /**
@@ -22,9 +23,10 @@ fun List<DatabaseShow>.asDomainModel(): List<TVShow> {
     return map {
         TVShow(
             id = it.id,
-            image = Image(it.image,it.image),
+            thumbnail = it.thumbnail,
+            originalImage = it.originalImage,
             name = it.name,
-            rating = Rating(it.rating),
+            rating = it.rating,
             summary = it.summary)
     }
 }

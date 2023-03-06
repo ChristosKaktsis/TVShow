@@ -5,6 +5,7 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 private const val BASE_URL =
     "https://api.tvmaze.com/"
@@ -18,6 +19,8 @@ private val retrofit = Retrofit.Builder()
 interface TVShowApiService{
     @GET("shows")
     suspend fun getTVShows(): List<NetworkTVShow>
+    @GET("shows/{id}")
+    suspend fun getTVShow(@Path("id") id:String): NetworkTVShow
 }
 object TVShowsApi{
     val retrofitService : TVShowApiService by lazy{

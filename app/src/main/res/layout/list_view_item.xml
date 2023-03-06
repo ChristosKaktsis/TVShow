@@ -8,7 +8,7 @@
             type="com.example.tvshow.network.TVShow" />
         <variable
             name="clickListener"
-             type="com.example.tvshow.TVShowListener"/>
+             type="com.example.tvshow.ui.TVShowListener"/>
     </data>
     <androidx.cardview.widget.CardView
         android:id="@+id/card"
@@ -27,7 +27,7 @@
         android:layout_height="80dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:imageUrl="@{tvshow.image.medium}"/>
+        app:imageUrl="@{tvshow.thumbnail}"/>
     <TextView
         android:id="@+id/tvshow_name"
         android:layout_width="wrap_content"
@@ -46,7 +46,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@id/tvshow_image"
         app:layout_constraintTop_toBottomOf="@id/tvshow_name"
-        android:text="@{tvshow.rating.average}"/>
+        android:text="@{tvshow.rating}"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
